@@ -1,12 +1,14 @@
 {
-    "name": "typescript-boilerplate-lib",
+    "name": "typescript-boilerplate-cli",
     "private": true,
     "version": "0.0.1",
-    "description": "Generic project boilerplate for TypeScript libraries",
+    "description": "Generic project boilerplate for TypeScript CLI app",
     "author": "Amir Arad <greenshade@gmail.com>",
     "license": "MIT",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "bin": "./dist/cli.js",
+    "engines": {
+        "node": ">=10"
+    },
     "files": [
         "dist/**/*",
         "!dist/**/*.test.js"
@@ -20,25 +22,32 @@
         "build": "tsc -p ./tsconfig.prod.json",
         "test": "ts-node node_modules/tape/bin/tape \"src/**/*.test.ts?(x)\" | tap-set-exit | tap-color",
         "prepack": "npm run prettify && npm run build",
-        "prettify": "npx prettier \"src/**/*.ts\" --write"
+        "prettify": "npx prettier \"src/**/*.tsx?(x)\" --write"
     },
     "husky": {
         "hooks": {
             "pre-commit": "npm run prettify"
         }
     },
+    "dependencies": {
+        "ink": "^3.0.3",
+        "meow": "^7.0.1",
+        "react": "^16.13.1"
+    },
     "devDependencies": {
         "@types/tape": "^4.13.0",
-        "@typescript-eslint/eslint-plugin": "^2.31.0",
-        "@typescript-eslint/parser": "^2.31.0",
-        "eslint": "^6.8.0",
+        "@typescript-eslint/eslint-plugin": "^3.8.0",
+        "@typescript-eslint/parser": "^3.8.0",
+        "chalk": "^4.1.0",
+        "eslint": "^7.6.0",
         "eslint-config-prettier": "^6.11.0",
         "husky": "^4.2.5",
+        "ink-testing-library": "^2.0.1",
         "rimraf": "^3.0.2",
         "tap-color": "^1.2.0",
         "tap-set-exit": "1.1.1",
-        "tape": "^5.0.0",
-        "ts-node": "^8.10.1",
-        "typescript": "~3.8.3"
+        "tape": "^5.0.1",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7"
     }
 }

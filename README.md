@@ -1,6 +1,6 @@
-# Template Typescript library
+# Template Typescript CLI
 
-A library template project
+A CLI application template project
 
 ## what's inside
  - code written in typescript
@@ -8,8 +8,8 @@ A library template project
  - test files are inside the src library
  - prettier and eslint 
  - circleci setup for automatic testing
- 
-
+ - react + ink for console rendering
+ - mew for command-line argument parsing
 
 ## Developer instructions
 
@@ -44,3 +44,7 @@ Removes any built code and any built executables.
 Cleans, then builds the library.
 
 Your built code will be in the `./dist/` directory.
+
+### debug
+
+read [how to debug an Ink application using react-dev-tools](https://github.com/vadimdemedes/ink#using-react-devtools)
